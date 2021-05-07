@@ -21,11 +21,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/editTextTextPersonName"
+    <TextView
+        android:id="@+id/link"
         android:layout_width="358dp"
-        android:layout_height="63dp"
+        android:layout_height="wrap_content"
         android:ems="10"
+        android:textColor="#0645AD"
+        android:textSize="20sp"
         android:inputType="textPersonName"
         android:text="https://www.digit.in/news/general/online-covid-19-resources-hospital-beds-medicines-oxygen-supply-59297.html"
         app:layout_constraintBottom_toBottomOf="parent"
