@@ -27,5 +27,6 @@ public class AyurvedaMedication extends Fragment {
         ayurvedha1.setText(R.string.ayurveda_medication_1);
         ayurvedha2.setText(R.string.tabbed_ayurveda_medication);
         ayurvedha3.setText(R.string.ayurveda_medication_2);
+        
     }
 }
