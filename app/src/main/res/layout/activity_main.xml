@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg2"
+    tools:context=".MainActivity">
+
+
+    <Button
+        android:id="@+id/buttonLogout"
+        android:layout_width="90dp"
+        android:layout_height="wrap_content"
+        android:rotationY="0"
+        android:text="Logout"
+        app:backgroundTint="#050608" />
+
+
+    <TextView
+        android:id="@+id/welcome"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:text="Welcome to CoronAware!"
+        android:textColor="#F8F6F6"
+        android:textSize="25dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:text="An One-Stop App for everything you need about Home Quarantine for COVID-19"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp" />
+
+
+
+
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/symptoms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:text="Check Symptoms"
+        android:textSize="15dp"
+        app:backgroundTint="#624955" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/gen_guidelines"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:text="Guidelines"
+        android:textSize="15dp"
+        app:backgroundTint="#5C4755" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/medications"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:text="Medications &amp; Treatments"
+        android:textSize="15dp"
+        app:backgroundTint="#674A52" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/oxygen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:text="Available Bed and Oxygen"
+        android:textSize="15dp"
+        app:backgroundTint="#3B292F" />
+
+
+
+
+
+</LinearLayout>
+
+

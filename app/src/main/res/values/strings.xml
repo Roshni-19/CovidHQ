@@ -1,0 +1,184 @@
+<resources>
+    <string name="app_name">CovidHQ</string>
+
+    <string-array name="gender">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+
+    <string name="title_activity_general_guidelines">General Guidelines</string>
+    <string name="tab_text_1">Allopathy</string>
+    <string name="tab_text_2">Siddha</string>
+    <string name="tab_text_3">Ayurveda</string>
+    <string name="general_guidelines">
+        Some General Guidelines like:<br />
+        Wash hands using soap/handwash regularly.<br />
+        Use handrubs and sanitizers during unavailability of soap and water.<br />
+        Wear masks all the time.<br />
+        Maintain Social distancing by staying atleast 6 feet apart from others.<br />
+        Donot share your accessories with others.<br />
+        Avoid crowdy places and poorly ventilated areas.<br />
+        Get vaccinated if you get a chance.<br />
+        Take medicines and treatment with doctors advice.<br />
+        If possible have a caretaker for help.<br />
+        Do breathing exercises and Yoga for mental and physical wellness.<br />
+        Donot watch News or current COVID case updates, as they may increase stress.<br />
+        Check your symptoms every day.<br />
+        Be aware of your circumstances and donot believe on fake news.<br />
+    </string>
+
+    <string name="siddha_medications">
+        Herbal water infusion made up of half teasppon of Chukku(Dried Ginger) boiled in 2 litres of water can be used as drinking water.\n
+        Steam inhalation with Tulasi, Nochi leaves, Turmeric can be taken twice a day.\n
+        Water boiled with a pinch of salt and turmeric should be gargled atleast 3 times a day.\n
+        Neem leaves fumigation can be done to sanitise the quarantine environment.\n
+        Some anti-viral formulations and herbs:\n
+        \t Kabasura Kudineer - 60ml twice a day after food\n
+        \t Nilavembu Kudineer - 60ml twice a day after food\n
+        \t Inji Surasam - 10ml once a day\n
+        \t Karunjeeraga Chooranam - 1gm BD\n
+        \t Musumusukai Adai - Can be taken as food item.\n
+        \t Nellikai Ilagam - 2 to 4gm twice a day\n
+        Since the dose recommendations may differ according to age group and health conditions, Consult
+        qualified Siddha Practitioner before taking the medicines.\n
+    </string>
+
+    <string name="large_text">
+        "Material is the metaphor.\n\n"
+
+        "A material metaphor is the unifying theory of a rationalized space and a system of motion."
+        "The material is grounded in tactile reality, inspired by the study of paper and ink, yet "
+        "technologically advanced and open to imagination and magic.\n"
+        "Surfaces and edges of the material provide visual cues that are grounded in reality. The "
+        "use of familiar tactile attributes helps users quickly understand affordances. Yet the "
+        "flexibility of the material creates new affordances that supercede those in the physical "
+        "world, without breaking the rules of physics.\n"
+        "The fundamentals of light, surface, and movement are key to conveying how objects move, "
+        "interact, and exist in space and in relation to each other. Realistic lighting shows "
+        "seams, divides space, and indicates moving parts.\n\n"
+
+        "Bold, graphic, intentional.\n\n"
+
+        "The foundational elements of print based design typography, grids, space, scale, color, "
+        "and use of imagery guide visual treatments. These elements do far more than please the "
+        "eye. They create hierarchy, meaning, and focus. Deliberate color choices, edge to edge "
+        "imagery, large scale typography, and intentional white space create a bold and graphic "
+        "interface that immerse the user in the experience.\n"
+        "An emphasis on user actions makes core functionality immediately apparent and provides "
+        "waypoints for the user.\n\n"
+
+        "Motion provides meaning.\n\n"
+
+        "Motion respects and reinforces the user as the prime mover. Primary user actions are "
+        "inflection points that initiate motion, transforming the whole design.\n"
+        "All action takes place in a single environment. Objects are presented to the user without "
+        "breaking the continuity of experience even as they transform and reorganize.\n"
+        "Motion is meaningful and appropriate, serving to focus attention and maintain continuity. "
+        "Feedback is subtle yet clear. Transitions are efﬁcient yet coherent.\n\n"
+
+        "3D world.\n\n"
+
+        "The material environment is a 3D space, which means all objects have x, y, and z "
+        "dimensions. The z-axis is perpendicularly aligned to the plane of the display, with the "
+        "positive z-axis extending towards the viewer. Every sheet of material occupies a single "
+        "position along the z-axis and has a standard 1dp thickness.\n"
+        "On the web, the z-axis is used for layering and not for perspective. The 3D world is "
+        "emulated by manipulating the y-axis.\n\n"
+
+        "Light and shadow.\n\n"
+
+        "Within the material environment, virtual lights illuminate the scene. Key lights create "
+        "directional shadows, while ambient light creates soft shadows from all angles.\n"
+        "Shadows in the material environment are cast by these two light sources. In Android "
+        "development, shadows occur when light sources are blocked by sheets of material at "
+        "various positions along the z-axis. On the web, shadows are depicted by manipulating the "
+        "y-axis only. The following example shows the card with a height of 6dp.\n\n"
+
+        "Resting elevation.\n\n"
+
+        "All material objects, regardless of size, have a resting elevation, or default elevation "
+        "that does not change. If an object changes elevation, it should return to its resting "
+        "elevation as soon as possible.\n\n"
+
+        "Component elevations.\n\n"
+
+        "The resting elevation for a component type is consistent across apps (e.g., FAB elevation "
+        "does not vary from 6dp in one app to 16dp in another app).\n"
+        "Components may have different resting elevations across platforms, depending on the depth "
+        "of the environment (e.g., TV has a greater depth than mobile or desktop).\n\n"
+
+        "Responsive elevation and dynamic elevation offsets.\n\n"
+
+        "Some component types have responsive elevation, meaning they change elevation in response "
+        "to user input (e.g., normal, focused, and pressed) or system events. These elevation "
+        "changes are consistently implemented using dynamic elevation offsets.\n"
+        "Dynamic elevation offsets are the goal elevation that a component moves towards, relative "
+        "to the component’s resting state. They ensure that elevation changes are consistent "
+        "across actions and component types. For example, all components that lift on press have "
+        "the same elevation change relative to their resting elevation.\n"
+        "Once the input event is completed or cancelled, the component will return to its resting "
+        "elevation.\n\n"
+
+        "Avoiding elevation interference.\n\n"
+
+        "Components with responsive elevations may encounter other components as they move between "
+        "their resting elevations and dynamic elevation offsets. Because material cannot pass "
+        "through other material, components avoid interfering with one another any number of ways, "
+        "whether on a per component basis or using the entire app layout.\n"
+        "On a component level, components can move or be removed before they cause interference. "
+        "For example, a floating action button (FAB) can disappear or move off screen before a "
+        "user picks up a card, or it can move if a snackbar appears.\n"
+        "On the layout level, design your app layout to minimize opportunities for interference. "
+        "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
+        "when a user tries to pick up one of cards.\n\n"
+    </string>
+
+    <string name="allopathy_medication">
+        <ul>
+            <li>Be in Communication with a treating Doctor and report in case of any complications.</li>
+            <li>Take steam inhalation and warm water gargles twice a day.</li>
+            <li>For mild fever, take Tab. Paracetamol 650mg tablets four times a day.</li>
+            <li>If fever still persists, consult your Doctor, who may prescribe non-steroidal anti-inflammatory
+            drugs (NSAID) like Tab. Naproxen 250mg twice a day.</li>
+            <li>Tab. Ivermectin 200mcg/kg can be taken once a day, in empty stomach for 3 to 5 days.</li>
+            <li>If you have mild symptoms beyond 5 days, consult your Doctor for treatment with Inhalational Budesonide via inhalers
+            with spacer at a dose of 800mcg twice daily for 5 to 7 days.</li>
+            <li>If symptoms persist beyond 7 days, consult the treating doctor for treatment with low dose oral steroids.</li>
+            <li><b>Donot take Remdesivir medicine at home without the advice of your treating doctor or help of a Medical Professional.</b></li>
+            <li>In case of high symptoms like breathing difficulty or failing of Oxygen Levels, get admitted in a hospital
+            immediately.</li>
+            <li>If 10 days have passed after symptoms and no fever for 3 days, you can discontinue your Home Quarantine.
+            But Still, Stay Home. Stay Safe.</li>
+        </ul>
+    </string>
+
+    <string name="ayurveda_medication">
+        &#8226; Use the medicines with caution and consult a qualified physician before having any medicine.<br />
+        &#8226; If you are already taking any medication for other health issues like diabetes, hypertension,
+        cancer-chemotherapy etc., you can continue them with the physician consultation.<br />
+        &#8226; Instead of Tea, Drink warm water boiled with medicinal herbs like Trikatu, Cinnamon,
+        Tulsi Leaves, Ashwagandha Root Powder etc.<br />
+        &#8226; For mild symptoms like Fever, Sore Throat, Cough and Dehydration, you can take any
+        of the following medicines:<br />
+        "\t" &#8226; Amritarista 15-20ml tid with water after food<br />
+        "\t" &#8226; Bilwadivati 1 TDS<br />
+        "\t" &#8226; Guduchyadi Kashayam freshly prepared 30-40ml BD before food<br />
+        "\t" &#8226; Haridra Khanda 3-5gm BD with lukewarm water or milk<br />
+        "\t" &#8226; Talisadi Churna 4g + Madhuyashtichurna 2g BD with honey/lukewarm water<br />
+        "\t" &#8226; Shadangapaneeya 40ml tid<br />
+        &#8226; For high symptoms like breathing difficulty, you can take any of the following medicines:<br />
+        "\t" &#8226; Inhalation with Karpoora and Nilgiritaila<br />
+        "\t" &#8226; Pushkaramoolasava 15-20ml TDS with equal water<br />
+        &#8226; Include spices like Cardamom, Dry ginger, Black pepper and garlic, Vegetables like
+            brinjal, Bitter gourd and Drumstick, Fruits such as Grapes, Kapittha(Wood Apple Extract),
+            Pomegranate, in your diet.<br />
+        &#8226; Restrict use of sweet, chilled, fried, oily food items, which is heavy to digest.<br />
+        &#8226; Practice Yogasana and Pranayama for atleast 30 minutes.<br />
+        &#8226; Children below 15 years of age, Pregnant/Lactating women should strictly take advice from the Physician to use
+        the medications.<br /> </string>
+
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_medicines">Medications</string>
+    <string name="title_activity_medications">Medications</string>
+</resources>

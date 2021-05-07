@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "201323197016",
+    "project_id": "covidhq",
+    "storage_bucket": "covidhq.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:201323197016:android:5a0a92d945f9332324102d",
+        "android_client_info": {
+          "package_name": "com.example.covidhq"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "201323197016-06e1j06vjt5le39l11g1pmd7p7jov5ii.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKiOVWKhO8KD6wE9W4z3SthHNNPP3mo_k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "201323197016-06e1j06vjt5le39l11g1pmd7p7jov5ii.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
