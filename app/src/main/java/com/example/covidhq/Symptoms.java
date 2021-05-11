@@ -53,7 +53,7 @@ public class Symptoms extends AppCompatActivity {
         prescription = findViewById(R.id.prescription);
         firebaseDatabase = FirebaseDatabase.getInstance();
         auth = FirebaseAuth.getInstance();
-        databaseReference = firebaseDatabase.getReference("Registeration details").child(auth.getUid());
+        databaseReference = firebaseDatabase.getReference("Registration Details").child(auth.getUid());
 
         normalText.setVisibility(GONE);
         mildText.setVisibility(GONE);
@@ -98,9 +98,9 @@ public class Symptoms extends AppCompatActivity {
 
                 if(!(normal.isChecked() || runningNose.isChecked() || bodyAche.isChecked() || mildFever.isChecked()
                         || lossTasteSmell.isChecked() || vomit.isChecked() || breathDifficulty.isChecked())) {
-                    Toast.makeText(getApplicationContext(), "Please select an option.", Toast.LENGTH_LONG);
+                    Toast.makeText(getApplicationContext(), "Please select an option.", Toast.LENGTH_LONG).show();
                 } else if(TextUtils.isEmpty(temp)) {
-                    Toast.makeText(getApplicationContext(), "Please Enter your body temperature.", Toast.LENGTH_LONG);
+                    Toast.makeText(getApplicationContext(), "Please Enter your body temperature.", Toast.LENGTH_LONG).show();
                 } else if(normal.isChecked()) {
                     normalText.setVisibility(View.VISIBLE);
                     mildText.setVisibility(GONE);
@@ -183,12 +183,14 @@ public class Symptoms extends AppCompatActivity {
                         databaseReference.child("Symptoms").child(key).child("Given Prescription").setValue(prescriptionModel).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void unused) {
-                                Toast.makeText(getApplicationContext(),"Your data is saved in our servers! Your Prescription will be sent in your Registered Email ID",Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(),"Your data is saved in our servers!",Toast.LENGTH_SHORT).show();
                                 int i=1;
+                                String pr = "\n\nPlease follow the below Prescription with Medical Advice\n\n";
                                 for(PrescriptionListItem p: prescriptionModel.prescription){
-                                    prescription.setText(i+". "+p.getMedicineName()+"\n\nMorning: \n\nBefore Food: "+p.getMorningbeforefood()+"\n\nAfter Food: "+p.getMorningafterfood()+"\n\nAfternoon: \n\nBefore Food: "+p.getAfternoonbeforefood()+"\n\nAfter Food: "+p.getAfternoonafterfood()+"\n\nNight: \n\nBefore Food: "+p.getNightbeforefood()+"\n\nAfter Food: "+p.getNightafterfood()+"\n\n\n");
+                                    pr += i+". "+p.getMedicineName()+"\n\nMorning: \nBefore Food: "+p.getMorningbeforefood()+"\nAfter Food: "+p.getMorningafterfood()+"\n\nAfternoon: \nBefore Food: "+p.getAfternoonbeforefood()+"\nAfter Food: "+p.getAfternoonafterfood()+"\n\nNight: \nBefore Food: "+p.getNightbeforefood()+"\nAfter Food: "+p.getNightafterfood()+"\n\n\n";
                                     i++;
                                 }
+                                prescription.setText(pr);
                             }
                         });
                     }

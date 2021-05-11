@@ -133,9 +133,6 @@ public class MainActivity extends Activity {
     }
 }
 
-//String.valueOf(obj2.getAge()
-
-
 
 
 

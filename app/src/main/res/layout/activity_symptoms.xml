@@ -157,7 +157,6 @@ Stay Home. Stay Safe. Follow the home quarantine guidelines."
                 android:layout_height="wrap_content"
                 android:id="@+id/prescription"
                 android:fontFamily="@font/advent_pro"
-                android:text="Hello"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:textSize="20dp"/>
