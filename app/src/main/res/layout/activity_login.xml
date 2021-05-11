@@ -1,95 +1,178 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg2"
-    tools:context=".Login">
+    android:background="#507449"
+    tools:context=".LoginActivity">
 
-    <EditText
-        android:id="@+id/editTextEmail"
-        android:layout_width="330dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="96dp"
-        android:ems="10"
-        android:hint="Enter your email"
-        android:inputType="textPersonName"
-        android:shadowColor="#FFFFFF"
-        android:textColor="#F4F1F1"
-        android:textColorHint="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.481"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-    <EditText
-        android:id="@+id/editTextPassword"
-        android:layout_width="330dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="32dp"
-        android:ems="10"
-        android:hint="Enter your password"
-        android:inputType="textPassword"
-        android:textColorHint="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
 
-    <Button
-        android:id="@+id/buttonLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="84dp"
-        android:text="Login"
-        app:backgroundTint="#0D5574"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textForgotpassword" />
+    <ImageView
+        android:id="@+id/bookIconImageView"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/welcomelogo" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/bookITextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
-        android:background="#00252728"
-        android:text="Login Page"
-        android:textColor="#FFFCFC"
-        android:textColorHighlight="#00FFFFFF"
-        android:textColorHint="#00FFFFFF"
-        android:textColorLink="#00FFFFFF"
-        android:textSize="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_below="@+id/bookIconImageView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/advent_pro_semibold"
+        android:text="Covid HQ"
+        android:textColor="@color/colorSplashText"
+        android:textSize="30dp" />
+
 
     <TextView
-        android:id="@+id/textRegister"
+        android:id="@+id/bookITextView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:text="Create a new account"
-        android:textColor="#FFFFFF"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonLogin"
-        app:layout_constraintVertical_bias="0.168" />
+        android:layout_below="@+id/bookITextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/advent_pro"
+        android:text="Lets break the Covid Chain Together!"
+        android:textColor="@color/colorSplashText"
+        android:textSize="20dp" />
 
-    <TextView
-        android:id="@+id/textForgotpassword"
+
+
+    <ProgressBar
+        android:id="@+id/loadingProgressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="12dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="-4dp"
+        android:foregroundGravity="bottom"
+        android:indeterminate="true"
+        android:padding="0dp"
+        android:theme="@style/ProgressBarStyle" />
+
+    <RelativeLayout
+        android:id="@+id/afterAnimationView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="20dp"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/relimageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/welcomelogo" />
+
+        <TextView
+            android:id="@+id/WelcomeTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relimageView"
+            android:layout_marginTop="20dp"
+            android:text="@string/welcome_back"
+            android:textColor="@color/colorBackground"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/readItTogetherTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/WelcomeTextView"
+            android:layout_marginTop="10dp"
+            android:text="Break it Together"
+            android:textColor="@color/colorAccent"
+            android:textSize="15sp" />
+
+        <LinearLayout
+            android:id="@+id/ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/readItTogetherTextView"
+            android:gravity="center"
+            android:layout_marginTop="80dp"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/emailid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter your Email ID"
+                android:textColor="@color/colorTextView"
+                android:textColorHint="@color/colorAccent"
+                android:textSize="15sp" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:hint="Enter your Password"
+                android:inputType="textPassword"
+                android:textColor="@color/colorTextView"
+                android:textColorHint="@color/colorAccent"
+                android:textSize="15sp" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/donthaveaccount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Don't have an Account? Sign up!"
+                    android:textColor="@color/colorTextView"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/forgotPassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|center_vertical"
+                    android:text="Forgot Password?"
+                    android:textColor="@color/colorTextView"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/login"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/button_drawable"
+            android:text="@string/login"
+            android:layout_below="@id/ll"
+            android:textAllCaps="false"
+            android:layout_marginTop="80dp"
+            android:textColor="#ffffff"
+            android:textSize="16sp" />
+
+
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/loader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Forgot password? Click here"
-        android:textColor="@color/white"
-        android:textSize="17dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_centerHorizontal="true"
+        android:visibility="gone"
+        android:layout_centerVertical="true"/>
+
+</RelativeLayout>

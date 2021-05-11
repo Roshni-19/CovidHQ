@@ -1,7 +1,6 @@
 package com.example.covidhq;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -24,18 +23,21 @@ public class MainActivity extends Activity {
 
 
 
-    MaterialButton genGuidelines, medications;
-    MaterialButton symptoms;
+    Button genGuidelines, medications;
+    Button symptoms;
     TextView welc,oxygen;
     Button logout;
     FirebaseAuth fAuth;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
+    Button food, doctor, livetv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
 
         welc = findViewById(R.id.welcome);
         symptoms = findViewById(R.id.symptoms);
@@ -45,12 +47,30 @@ public class MainActivity extends Activity {
         logout = findViewById(R.id.buttonLogout);
         oxygen = findViewById(R.id.oxygen);
         firebaseDatabase = FirebaseDatabase.getInstance();
-        databaseReference = firebaseDatabase.getReference("Registeration details");
+        databaseReference = firebaseDatabase.getReference("Registration Details");
+        food = findViewById(R.id.food);
+        doctor = findViewById(R.id.doctor);
+        livetv = findViewById(R.id.livetv);
+
+        food.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),DietPlan.class));
+            }
+        });
+
+        livetv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),LiveTV.class));
+            }
+        });
 
         databaseReference.child(fAuth.getUid()).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 RegisterModel obj2 = snapshot.getValue(RegisterModel.class);
+                welc.setText("Welcome\n"+obj2.getName());
 
             }
 
@@ -61,13 +81,20 @@ public class MainActivity extends Activity {
         });
 
 
+        doctor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),DoctorsActivity.class));
+            }
+        });
+
 
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
                 Toast.makeText(MainActivity.this,"Logged out", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(getApplicationContext(),Login.class));
+                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                 finish();
             }
         });

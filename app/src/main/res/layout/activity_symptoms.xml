@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/bg2"
     tools:context=".Symptoms">
 
     <ScrollView
@@ -23,7 +22,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
                 android:text="How are you feeling today?"
-                android:textColor="#FFFFFF"
+                android:fontFamily="@font/advent_pro"
                 android:textSize="@dimen/toolbar_titleText_size" />
 
             <CheckBox
@@ -33,7 +32,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:text="Normal"
-                android:textColor="#F6F3F3"
+                android:fontFamily="@font/advent_pro"
                 android:textSize="20sp" />
 
             <CheckBox
@@ -43,7 +42,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:text="Running Nose/ Sore Throat"
-                android:textColor="#FFFFFF"
+                android:fontFamily="@font/advent_pro"
                 android:textSize="20dp" />
 
             <CheckBox
@@ -53,7 +52,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:text="Body Ache"
-                android:textColor="#FFFFFF"
+                android:fontFamily="@font/advent_pro"
                 android:textSize="20dp" />
 
             <CheckBox
@@ -63,7 +62,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:text="Feverish"
-                android:textColor="#FAF5F5"
+                android:fontFamily="@font/advent_pro"
                 android:textSize="20dp" />
 
             <CheckBox
@@ -73,7 +72,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:text="Loss of Taste or Smell"
-                android:textColor="#FAF6F6"
+                android:fontFamily="@font/advent_pro"
                 android:textSize="20dp" />
 
             <CheckBox
@@ -83,7 +82,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:text="Nausea/Vomiting"
-                android:textColor="#FFFFFF"
+                android:fontFamily="@font/advent_pro"
                 android:textSize="20dp" />
 
             <CheckBox
@@ -93,7 +92,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:text="Breathing difficulty"
-                android:textColor="#EDE9E9"
+                android:fontFamily="@font/advent_pro"
                 android:textSize="20dp" />
 
             <EditText
@@ -103,7 +102,7 @@
                 android:layout_margin="15dp"
                 android:hint="Enter Temperature in Fahrenheit"
                 android:inputType="numberDecimal"
-                android:textColorHint="#F4F0F0" />
+                android:fontFamily="@font/advent_pro" />
 
             <Button
                 android:id="@+id/submit"
@@ -116,10 +115,11 @@
                 android:layout_marginBottom="20dp"
                 android:gravity="center"
                 android:padding="10dp"
-                android:text="submit"
+                android:text="Submit"
                 android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                 android:textSize="18sp"
-                app:backgroundTint="#664A4F" />
+                android:textColor="@color/white"
+                android:background="@drawable/button_drawable" />
 
             <TextView
                 android:id="@+id/normal_text"
@@ -129,8 +129,7 @@
                 android:layout_marginRight="20dp"
                 android:text="Good! You are in Normal Stage and are not affected by COVID-19. Continue Staying
 at home. Stay Safe and folow the guidelines."
-                android:textColor="#F3EFEF"
-                android:textSize="20dp" />
+                android:fontFamily="@font/advent_pro"                android:textSize="20dp" />
 
             <TextView
                 android:id="@+id/mild_text"
@@ -138,9 +137,9 @@ at home. Stay Safe and folow the guidelines."
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
+                android:fontFamily="@font/advent_pro"
                 android:text="Alert! You have mild symptoms of COVID-19. You mist continue your home-quarantine.
 Stay Home. Stay Safe. Follow the home quarantine guidelines."
-                android:textColor="@color/white"
                 android:textSize="20dp" />
 
             <TextView
@@ -149,9 +148,20 @@ Stay Home. Stay Safe. Follow the home quarantine guidelines."
                 android:id="@+id/alert_text"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
-                android:textColor="@color/white"
-                android:text="Alert! You are having high symptoms of COVID-19. You must consult a Doctor Immediately."
+                android:fontFamily="@font/advent_pro"                android:text="Alert! You are having high symptoms of COVID-19. You must consult a Doctor Immediately."
                 android:textSize="20dp"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/prescription"
+                android:fontFamily="@font/advent_pro"
+                android:text="Hello"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:textSize="20dp"/>
+
 
         </LinearLayout>
 

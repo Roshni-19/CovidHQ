@@ -1,116 +1,171 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg2"
-    tools:context=".Register">
+    tools:context=".RegisterActivity">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
+    <ProgressBar
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="Register Page"
-        android:textColor="#FAF5F5"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/loader"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:visibility="gone"/>
 
-    <TextView
-        android:id="@+id/textLogin"
-        android:layout_width="wrap_content"
+    <ScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="match_parent"
+        android:layout_marginTop="70dp"
         android:layout_height="wrap_content"
-        android:text="Already have an account?Click here"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonRegister" />
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:visibility="visible">
 
-    <Button
-        android:id="@+id/buttonRegister"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:background="#674A54"
-        android:text="Register"
-        app:backgroundTint="#674A54"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextAge" />
 
-    <EditText
-        android:id="@+id/editTextEmaill"
-        android:layout_width="330dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="40dp"
-        android:ems="10"
-        android:hint="Enter your email"
-        android:textColorHint="@color/white"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.432"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextName" />
+        <LinearLayout
+            android:id="@+id/afterAnimationView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/readItTogetherTextView"
+            android:gravity="center"
+            android:visibility="visible"
+            android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/editTextName"
-        android:layout_width="330dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="48dp"
-        android:ems="10"
-        android:hint="Enter your name"
-        android:textColorHint="@color/white"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.432"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+            <ImageView
+                android:id="@+id/relimageView"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="left"
+                android:src="@drawable/welcomelogo" />
 
-    <EditText
-        android:id="@+id/editTextAge"
-        android:layout_width="125dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="40dp"
-        android:ems="10"
-        android:hint="Age"
-        android:textColorHint="@color/white"
-        android:inputType="number"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPasssword" />
+            <TextView
+                android:id="@+id/WelcomeTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relimageView"
+                android:layout_marginTop="20dp"
+                android:text="Register Now"
+                android:textColor="@color/colorBackground"
+                android:textSize="25sp"
+                android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/editTextPasssword"
-        android:layout_width="330dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="40dp"
-        android:ems="10"
-        android:hint="Enter your password"
-        android:textColorHint="@color/white"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextEmaill" />
+            <TextView
+                android:id="@+id/readItTogetherTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/WelcomeTextView"
+                android:layout_marginTop="10dp"
+                android:text="Break it Together"
+                android:textColor="@color/colorAccent"
+                android:textSize="15sp" />
 
-    <Spinner
-        android:id="@+id/spinnerGender"
-        android:layout_width="125dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="40dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.646"
-        app:layout_constraintStart_toEndOf="@+id/editTextAge"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPasssword" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/emailid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter your Email ID"
+                    android:textColor="@color/colorTextView"
+                    android:inputType="textEmailAddress"
+                    android:layout_marginTop="40dp"
+                    android:textColorHint="@color/colorAccent"
+                    android:textSize="15sp" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/mobno"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter your Mobile Number"
+                    android:layout_marginTop="25dp"
+                    android:textColor="@color/colorTextView"
+                    android:inputType="phone"
+                    android:textColorHint="@color/colorAccent"
+                    android:textSize="15sp" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:hint="Enter your Name"
+                    android:textColor="@color/colorTextView"
+                    android:textColorHint="@color/colorAccent"
+                    android:textSize="15sp" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/age"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:hint="Enter your Age"
+                    android:inputType="number"
+                    android:textColor="@color/colorTextView"
+                    android:textColorHint="@color/colorAccent"
+                    android:textSize="15sp" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:hint="Enter your Password"
+                    android:inputType="textPassword"
+                    android:textColor="@color/colorTextView"
+                    android:textColorHint="@color/colorAccent"
+                    android:textSize="15sp" />
+
+                <Spinner
+                    android:id="@+id/spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:textColor="@color/colorTextView"
+                    android:textColorHint="@color/colorAccent"
+                    android:textSize="15sp" />
+
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:id="@+id/alreadyhaveaccount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Already have an account? Click Here!"
+                        android:textColor="@color/colorTextView"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+
+
+
+                </FrameLayout>
+
+
+                <Button
+                    android:id="@+id/register"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_below="@+id/password"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/button_drawable"
+                    android:text="Register"
+                    android:textAllCaps="false"
+                    android:textColor="#ffffff"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+
+
+
+    </ScrollView>
+
+</LinearLayout>

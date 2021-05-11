@@ -3,7 +3,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg2"
     android:orientation="vertical">
 
     <ScrollView
@@ -20,23 +19,26 @@
                 android:id="@+id/siddha1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/advent_pro"
+                android:layout_margin="10dp"
                 android:textAppearance="@style/Widget.AppCompat.ListView"
-                android:textColor="#F6F3F3"
                 android:textSize="20dp" />
             <TextView
                 android:id="@+id/siddha2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
+                android:fontFamily="@font/advent_pro"
+                android:layout_margin="10dp"
                 android:textAppearance="@style/Widget.AppCompat.ListView"
-                android:textColor="#F6F3F3"
                 android:textSize="20dp" />
             <TextView
                 android:id="@+id/siddha3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/Widget.AppCompat.ListView"
-                android:textColor="#F6F3F3"
+                android:fontFamily="@font/advent_pro"
+                android:layout_margin="10dp"
                 android:textSize="20dp" />
 
         </LinearLayout>

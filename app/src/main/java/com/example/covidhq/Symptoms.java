@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -12,14 +13,26 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.covidhq.models.PrescriptionListItem;
+import com.example.covidhq.models.PrescriptionModel;
+import com.example.covidhq.models.SymptomsModel;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import static android.view.View.GONE;
 
 public class Symptoms extends AppCompatActivity {
 
     CheckBox normal, runningNose, bodyAche, mildFever, lossTasteSmell, vomit, breathDifficulty;
     EditText temperature;
-    TextView normalText, mildText, alertText;
+    TextView normalText, mildText, alertText,prescription;
     Button submit;
+
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference databaseReference;
+    FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +50,10 @@ public class Symptoms extends AppCompatActivity {
         normalText = findViewById(R.id.normal_text);
         mildText = findViewById(R.id.mild_text);
         alertText = findViewById(R.id.alert_text);
+        prescription = findViewById(R.id.prescription);
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        auth = FirebaseAuth.getInstance();
+        databaseReference = firebaseDatabase.getReference("Registeration details").child(auth.getUid());
 
         normalText.setVisibility(GONE);
         mildText.setVisibility(GONE);
@@ -44,11 +61,7 @@ public class Symptoms extends AppCompatActivity {
 
         submit = findViewById(R.id.submit);
 
-        double tempVal = 0;
-        String temp = temperature.getText().toString();
-        if(!"".equals(temp)) {
-            tempVal = Double.parseDouble(String.valueOf(tempVal));
-        }
+
 
         normal.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -70,14 +83,23 @@ public class Symptoms extends AppCompatActivity {
                 }
             }
         });
-        double finalTempVal = tempVal;
+
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                double tempVal = 0;
+                String temp = temperature.getText().toString();
+                if(!"".equals(temp)) {
+                    tempVal = Double.parseDouble(String.valueOf(tempVal));
+                }
+                double finalTempVal = tempVal;
+
+
                 if(!(normal.isChecked() || runningNose.isChecked() || bodyAche.isChecked() || mildFever.isChecked()
                         || lossTasteSmell.isChecked() || vomit.isChecked() || breathDifficulty.isChecked())) {
                     Toast.makeText(getApplicationContext(), "Please select an option.", Toast.LENGTH_LONG);
-                } else if(temp == "") {
+                } else if(TextUtils.isEmpty(temp)) {
                     Toast.makeText(getApplicationContext(), "Please Enter your body temperature.", Toast.LENGTH_LONG);
                 } else if(normal.isChecked()) {
                     normalText.setVisibility(View.VISIBLE);
@@ -93,6 +115,85 @@ public class Symptoms extends AppCompatActivity {
                     mildText.setVisibility(GONE);
                     alertText.setVisibility(View.VISIBLE);
                 }
+
+                String Normal = "NO";
+                String RunningNose = "NO";
+                String BodyAche = "NO";
+                String Feverish = "NO";
+                String LossOfTaste = "NO";
+                String Nausia = "NO";
+                String BreathingDifficulty = "NO";
+                String Temp = "NO";
+
+                PrescriptionModel prescriptionModel = new PrescriptionModel();
+
+                if(runningNose.isChecked()){
+                    RunningNose = "YES";
+                    prescriptionModel.prescription.add(new PrescriptionListItem("Ipratropium Bromide 0.03% Nasal Spray","NO","YES","NO","NO","NO","YES"));
+                    prescriptionModel.prescription.add(new PrescriptionListItem("Antihistaminesy","NO","YES","NO","NO","NO","YES"));
+                }
+                if(bodyAche.isChecked()){
+                    BodyAche = "YES";
+                    prescriptionModel.prescription.add(new PrescriptionListItem("Tab. Aspirin","NO","YES","NO","YES","NO","YES"));
+
+                }
+                if(mildFever.isChecked()){
+                    Feverish = "YES";
+                    prescriptionModel.prescription.add(new PrescriptionListItem("Tab. Dolo 650","NO","YES","NO","YES","NO","YES"));
+
+                }
+                if(lossTasteSmell.isChecked()){
+                    LossOfTaste = "YES";
+                    prescriptionModel.prescription.add(new PrescriptionListItem("Antihistamines and Decongestant","NO","YES","NO","YES","NO","YES"));
+
+                }
+                if(vomit.isChecked()){
+                    Nausia = "YES";
+                    prescriptionModel.prescription.add(new PrescriptionListItem("Aprepitant","NO","YES","NO","NO","NO","YES"));
+
+                }
+                if(breathDifficulty.isChecked()){
+                    BreathingDifficulty = "YES";
+                    prescriptionModel.prescription.add(new PrescriptionListItem("Albuterol or Anticholinergic Agent","NO","YES","NO","NO","NO","YES"));
+
+                }
+
+                Temp = temp;
+
+
+                if(normal.isChecked()){
+                    Normal = "YES";
+                    RunningNose = "NO";
+                    BodyAche = "NO";
+                    Feverish = "NO";
+                    LossOfTaste = "NO";
+                    Nausia = "NO";
+                    BreathingDifficulty = "NO";
+                }
+
+
+                SymptomsModel symptomsModel = new SymptomsModel(Normal,RunningNose,BodyAche,Feverish,LossOfTaste,Nausia,BreathingDifficulty,Temp);
+
+                String key = String.valueOf(System.currentTimeMillis());
+
+
+                databaseReference.child("Symptoms").child(key).child("Noted Symptoms").setValue(symptomsModel).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+                        databaseReference.child("Symptoms").child(key).child("Given Prescription").setValue(prescriptionModel).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void unused) {
+                                Toast.makeText(getApplicationContext(),"Your data is saved in our servers! Your Prescription will be sent in your Registered Email ID",Toast.LENGTH_SHORT).show();
+                                int i=1;
+                                for(PrescriptionListItem p: prescriptionModel.prescription){
+                                    prescription.setText(i+". "+p.getMedicineName()+"\n\nMorning: \n\nBefore Food: "+p.getMorningbeforefood()+"\n\nAfter Food: "+p.getMorningafterfood()+"\n\nAfternoon: \n\nBefore Food: "+p.getAfternoonbeforefood()+"\n\nAfter Food: "+p.getAfternoonafterfood()+"\n\nNight: \n\nBefore Food: "+p.getNightbeforefood()+"\n\nAfter Food: "+p.getNightafterfood()+"\n\n\n");
+                                    i++;
+                                }
+                            }
+                        });
+                    }
+                });
+
             }
         });
     }

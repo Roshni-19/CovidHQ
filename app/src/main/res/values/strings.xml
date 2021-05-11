@@ -12,19 +12,19 @@
     <string name="tab_text_3">Ayurveda</string>
     <string name="general_guidelines">
         Some General Guidelines like:\n\n
-        Wash hands using soap/handwash regularly.\n\n
-        Use handrubs and sanitizers during unavailability of soap and water.\n\n
-        Wear masks all the time.\n\n
-        Maintain Social distancing by staying atleast 6 feet apart from others.\n\n
-        Donot share your accessories with others.\n\n
-        Avoid crowdy places and poorly ventilated areas.\n\n
-        Get vaccinated if you get a chance.\n\n
-        Take medicines and treatment with doctors advice.\n\n
-        If possible have a caretaker for help.\n\n
-        Do breathing exercises and Yoga for mental and physical wellness.\n\n
-        Donot watch News or current COVID case updates, as they may increase stress.\n\n
-        Check your symptoms every day.\n\n
-        Be aware of your circumstances and donot believe on fake news.\n\n
+        &#8226; Wash hands using soap/handwash regularly.\n\n
+        &#8226; Use handrubs and sanitizers during unavailability of soap and water.\n\n
+        &#8226; Wear masks all the time.\n\n
+        &#8226; Maintain Social distancing by staying atleast 6 feet apart from others.\n\n
+        &#8226; Donot share your accessories with others.\n\n
+        &#8226; Avoid crowdy places and poorly ventilated areas.\n\n
+        &#8226; Get vaccinated if you get a chance.\n\n
+        &#8226; Take medicines and treatment with doctors advice.\n\n
+        &#8226; If possible have a caretaker for help.\n\n
+        &#8226; Do breathing exercises and Yoga for mental and physical wellness.\n\n
+        &#8226; Donot watch News or current COVID case updates, as they may increase stress.\n\n
+        &#8226; Check your symptoms every day.\n\n
+        &#8226; Be aware of your circumstances and donot believe on fake news.\n\n
     </string>
 
     <string name="siddha_medications_1">
@@ -109,4 +109,52 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_medicines">Medications</string>
     <string name="title_activity_medications">Medications</string>
+
+
+    <string name="booki">BookI</string>
+    <string name="welcome_back">Welcome Back</string>
+    <string name="read_it_together">Read it together</string>
+    <string name="skip">Skip</string>
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="sign_up">Sign up</string>
+    <string name="forget_password">Forget Password.?</string>
+
+
+    <string name="calories">
+
+        &#8226; Non-obese -25-30kcal/kg Actual Body Weight\n
+        &#8226; Overweight or obese- 25-30kcal/kg IBW or Adjusted BW\n
+        &#8226; Underweight -25-35kcal/kg Adjusted BW\n
+        &#8226; Protein requirement – 1-1.5gm/kg/ Actual Body Weight\n
+        &#8226; Fats requirement – 25-30% of the total calories\n
+        &#8226; Multivitamin, minerals &amp; trace elementsVitamin D – 10-1000mcg/day\n
+        &#8226; Vitamin A – to be consumed through diet\n
+        &#8226; Vitamin E – 134-800mg/day\n
+        &#8226; Zinc – 30-220mg\n
+        &#8226; Vitamin C – 200mg- 2gm\n
+
+    </string>
+
+    <string name="ons">
+
+        &#8226; Around 400-600kcals/day and 30gms of protein should be provided through ONS. This should be continued for at least a month.\n
+        &#8226; Assessment should be done every 3rd day for patients.\n
+
+    </string>
+
+    <string name="covidguidelinesnutrition">
+
+        &#8226; Leftover food to be treated as medical waste.\n
+        &#8226; Regular physical activity and breathing exercise to be advised, as per tolerance.\n
+        &#8226; Having a balanced diet with moderate carbs and fats, and High Biological Value proteins.\n
+        &#8226; Provide Oral Nutrition Supplements and Antioxidants to meet the demands of the patients.\n
+        &#8226; Consumption of Antioxidant Vitamins and Minerals should be encouraged especially Vitamin C and Vitamin D.\n
+
+    </string>
+
+
+
+
 </resources>

@@ -1,6 +1,5 @@
 package com.example.covidhq;
 
-import android.support.v4.app.*;
 import android.os.Bundle;
 import android.view.*;
 import android.widget.TextView;

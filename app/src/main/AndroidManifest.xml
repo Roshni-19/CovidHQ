@@ -3,6 +3,8 @@
     package="com.example.covidhq">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -11,7 +13,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CovidHQ">
-        <activity android:name=".Oxygen"></activity>
+        <activity android:name=".LiveTV"></activity>
+        <activity android:name=".DoctorsActivity" />
+        <activity android:name=".DietPlan" />
+        <activity android:name=".Oxygen" />
         <activity android:name=".SiddhaMedication" />
         <activity android:name=".AyurvedaMedication" />
         <activity android:name=".AllopathyMedication" />
@@ -22,15 +27,19 @@
         <activity android:name=".Symptoms" />
         <activity android:name=".GeneralGuideLines" />
         <activity android:name=".ForgotPassword" />
-        <activity android:name=".Login">
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Register" />
         <activity android:name=".MainActivity" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
