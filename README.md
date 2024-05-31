@@ -14,10 +14,4 @@ This is an Android native application developed with Java.
 
 [Drive Link](https://drive.google.com/file/d/1OpfC7_ms0W3DsdcxL2WhHwDS_WaoWmte/view?usp=drivesdk)
 
-## Developers:
-
-[Roshni B](https://github.com/Roshni-19) <br>
-[Mithulbhalaji U P](https://github.com/mithulbhalaji) <br>
-[Nithiyashree M G](https://github.com/mgncodes) <br>
-Nandhini S
 
